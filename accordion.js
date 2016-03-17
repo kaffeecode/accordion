@@ -2,14 +2,14 @@
 
   $.fn.kcAccordion = function kcAccordion(
     { closeOther } = {}) {
-    const that = this;
+    const that = $(this).children('.kc-element');
 
-    $(that).children('.kc-head').on('click', function headClicked() {
+    that.children('.kc-head').on('click', function headClicked() {
       const next = $(this).next('.kc-content');
       const expanded = next.hasClass('kc-expanded');
 
       if(closeOther) {
-        $(that).children('.kc-content')
+        that.children('.kc-content')
           .removeClass('kc-expanded')
           .css('max-height', '');
       }
