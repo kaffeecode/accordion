@@ -38,7 +38,7 @@
     function expandElement(element) {
       element
         .addClass('kc-expanded')
-        .css('max-height', `${next[0].scrollHeight}px`);
+        .css('max-height', `${element[0].scrollHeight}px`);
     }
   };
 })(jQuery);
