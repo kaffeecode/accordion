@@ -16,11 +16,11 @@
 
     // Content clicked
     that.children('.kc-content').on('click', function contentClicked(){
-      const this = $(this);
-      const expanded = this.hasClass('kc-expanded');
+      const $this = $(this);
+      const expanded = $this.hasClass('kc-expanded');
 
       if(closeOther && !expanded) closeOthers();
-      if(!expanded) expandElement(this);
+      if(!expanded) expandElement($this);
     });
 
     function closeOthers() {
