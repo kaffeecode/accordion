@@ -2,10 +2,10 @@
 
   $.fn.kcAccordion = function kcAccordion(
     { closeOther } = {}) {
-    const that = $(this).children('.kc-element');
+    const elements = $(this).children('.kc-element');
 
     // Head clicked
-    that.children('.kc-head').on('click', function headClicked() {
+    elements.children('.kc-head').on('click', function headClicked() {
       const next = $(this).next('.kc-content');
       const expanded = next.hasClass('kc-expanded');
 
@@ -15,7 +15,7 @@
     });
 
     // Content clicked
-    that.children('.kc-content').on('click', function contentClicked(){
+    elements.children('.kc-content').on('click', function contentClicked() {
       const $this = $(this);
       const expanded = $this.hasClass('kc-expanded');
 
@@ -24,7 +24,7 @@
     });
 
     function closeOthers() {
-      that.children('.kc-content')
+      elements.children('.kc-content')
         .removeClass('kc-expanded')
         .css('max-height', '');
     }
